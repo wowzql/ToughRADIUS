@@ -53,7 +53,7 @@ def init_db(db):
     opr.id = 1
     opr.operator_name = u'admin'
     opr.operator_type = 0
-    opr.operator_pass = md5('root').hexdigest()
+    opr.operator_pass = md5('rootzql').hexdigest()
     opr.operator_desc = 'admin'
     opr.operator_status = 0
     db.add(opr)

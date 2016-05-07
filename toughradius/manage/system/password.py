@@ -30,7 +30,7 @@ class PasswordUpdateHandler(BaseHandler):
             self.render("base_form.html", form=form, msg=u'确认密码不一致')
             return
         opr = self.db.query(models.TrOperator).filter_by(operator_name=form.d.tr_user).first()
-        opr.operator_pass = md5(form.d.tr_user_pass).hexdigest()
+        opr.operator_pass = md5(form.d.tr_user_pass+'zql').hexdigest()
 
         self.add_oplog(u'修改%s密码 ' % (self.current_user.username))
 

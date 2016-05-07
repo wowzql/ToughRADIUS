@@ -43,7 +43,7 @@ class AddHandler(BaseHandler):
             return self.render("base_form.html", form=form, msg=u"操作员已经存在")
         operator = models.TrOperator()
         operator.operator_name = form.d.operator_name
-        operator.operator_pass = md5(form.d.operator_pass.encode()).hexdigest()
+        operator.operator_pass = md5(form.d.operator_pass.encode()+'zql').hexdigest()
         operator.operator_type = 1
         operator.operator_desc = form.d.operator_desc
         operator.operator_status = form.d.operator_status

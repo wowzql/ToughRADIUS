@@ -50,7 +50,7 @@ class CustomerOpenHandler(CustomerHandler):
         customer.node_id = form.d.node_id
         customer.realname = form.d.realname
         customer.customer_name = form.d.account_number
-        customer.password = md5(form.d.password.encode()).hexdigest()
+        customer.password = md5(form.d.password.encode()+'zql').hexdigest()
         customer.idcard = form.d.idcard
         customer.sex = '1'
         customer.age = '0'

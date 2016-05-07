@@ -46,7 +46,7 @@ class CustomerUpdateHandler(ApiHandler):
             address = request.get("address")
 
             if password:
-                customer.password = md5(password.encode()).hexdigest()
+                customer.password = md5(password.encode()+'zql').hexdigest()
 
             if realname:
                 customer.realname = realname

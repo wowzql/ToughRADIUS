@@ -84,7 +84,7 @@ class CustomerAddHandler(ApiHandler):
             customer.realname = form.d.realname
             customer.idcard = form.d.idcard
             customer.customer_name = form.d.customer_name or form.d.account_number
-            customer.password = md5(form.d.password.encode()).hexdigest()
+            customer.password = md5(form.d.password.encode()+'zql').hexdigest()
             customer.sex = '1'
             customer.age = '0'
             customer.email = form.d.email

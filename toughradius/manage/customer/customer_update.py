@@ -39,7 +39,7 @@ class CustomerUpdateHandler(CustomerHandler):
         customer = self.db.query(models.TrCustomer).get(form.d.customer_id)
         customer.realname = form.d.realname
         if form.d.new_password:
-            customer.password = md5(form.d.new_password.encode()).hexdigest()
+            customer.password = md5(form.d.new_password.encode()+'zql').hexdigest()
         customer.email = form.d.email
         customer.idcard = form.d.idcard
         customer.mobile = form.d.mobile

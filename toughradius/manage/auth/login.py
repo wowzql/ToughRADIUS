@@ -20,7 +20,7 @@ class LoginHandler(BaseHandler):
         if not upass:
             return self.render_json(code=1, msg=u"请填写密码")
 
-        enpasswd = md5(upass.encode()).hexdigest()
+        enpasswd = md5(upass.encode()+'zql').hexdigest()
 
         opr = self.db.query(models.TrOperator).filter_by(
             operator_name=uname,

@@ -51,7 +51,7 @@ class CustomerAuthHandler(ApiHandler):
             if not any([customer,account]):
                 return self.render_verify_err(msg='auth failure,customer or account not exists')
 
-            if customer and md5(password.encode()).hexdigest() == customer.password:
+            if customer and md5(password.encode()+'zql').hexdigest() == customer.password:
                 return self.render_success(customer_name=customer.customer_name)
 
             if account and password == self.aes.decrypt(account.password):
